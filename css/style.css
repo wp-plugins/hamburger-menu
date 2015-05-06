@@ -1,0 +1,613 @@
+.hamburger-button-container {
+  border-width: 0px;
+  border-style: solid;
+  border-color: #333;
+  width: 30px;
+  height: 30px;
+  padding: 20px;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: block;
+  outline: none;
+  cursor: pointer;
+  z-index: 99999; }
+  .hamburger-button-container .hamburger-button-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 4px;
+    margin: 0 auto;
+    width: 30px;
+    background: #000;
+    -moz-transition: all 0.2s ease-in-out 0.2s;
+    -o-transition: all 0.2s ease-in-out 0.2s;
+    -webkit-transition: all 0.2s ease-in-out;
+    -webkit-transition-delay: 0.2s;
+    transition: all 0.2s ease-in-out 0.2s;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); }
+    .hamburger-button-container .hamburger-button-icon:before, .hamburger-button-container .hamburger-button-icon:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      -moz-transition: top 0.2s ease-in-out 0.2s, bottom 0.2s ease-in-out 0.2s, -moz-transform 0.2s ease-in-out 0s;
+      -o-transition: top 0.2s ease-in-out 0.2s, bottom 0.2s ease-in-out 0.2s, -o-transform 0.2s ease-in-out 0s;
+      -webkit-transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+      -webkit-transition-delay: 0.2s, 0.2s, 0s;
+      transition: top 0.2s ease-in-out 0.2s, bottom 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out 0s; }
+    .hamburger-button-container .hamburger-button-icon:before {
+      -moz-transform: translateY(-300%);
+      -ms-transform: translateY(-300%);
+      -webkit-transform: translateY(-300%);
+      transform: translateY(-300%); }
+    .hamburger-button-container .hamburger-button-icon:after {
+      -moz-transform: translateY(300%);
+      -ms-transform: translateY(300%);
+      -webkit-transform: translateY(300%);
+      transform: translateY(300%); }
+
+@media screen and (min-width: 787px) {
+  .hamburger-button-container:not(.close):hover .hamburger-button-icon:before {
+    -moz-transform: translateY(-300%) translateX(5%);
+    -ms-transform: translateY(-300%) translateX(5%);
+    -webkit-transform: translateY(-300%) translateX(5%);
+    transform: translateY(-300%) translateX(5%); }
+  .hamburger-button-container:not(.close):hover .hamburger-button-icon:after {
+    -moz-transform: translateY(300%) translateX(-5%);
+    -ms-transform: translateY(300%) translateX(-5%);
+    -webkit-transform: translateY(300%) translateX(-5%);
+    transform: translateY(300%) translateX(-5%); } }
+.hamburger-button-container.close .hamburger-button-icon {
+  background: transparent; }
+  .hamburger-button-container.close .hamburger-button-icon:before, .hamburger-button-container.close .hamburger-button-icon:after {
+    -moz-transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, -moz-transform 0.2s ease-in-out 0.2s;
+    -o-transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, -o-transform 0.2s ease-in-out 0.2s;
+    -webkit-transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+    -webkit-transition-delay: 0s, 0s, 0.2s;
+    transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s; }
+  .hamburger-button-container.close .hamburger-button-icon:before {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .hamburger-button-container.close .hamburger-button-icon:after {
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+
+.hamburger-left #hamburger-button {
+  right: auto !important; }
+
+.hamburger-right #hamburger-button {
+  left: auto !important; }
+
+body {
+  position: relative !important; }
+
+#hamburger-menu-container {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #34495E;
+  color: #fff;
+  width: 100%;
+  max-width: 350px;
+  overflow: hidden; }
+  #hamburger-menu-container #hamburger-menu-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-sizing: content-box;
+    padding-right: 30px; }
+    #hamburger-menu-container #hamburger-menu-wrapper > * {
+      box-sizing: border-box; }
+  #hamburger-menu-container a {
+    text-decoration: none; }
+  #hamburger-menu-container #hamburger-menu a {
+    display: block;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none; }
+  #hamburger-menu-container #hamburger-menu .menu-item-has-children > a, #hamburger-menu-container #hamburger-menu .page_item_has_children > a {
+    padding-right: 40px;
+    position: relative; }
+    #hamburger-menu-container #hamburger-menu .menu-item-has-children > a:after, #hamburger-menu-container #hamburger-menu .page_item_has_children > a:after {
+      content: '\f431';
+      position: absolute;
+      font-size: 15px;
+      display: block;
+      right: 15px;
+      top: 50%;
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      font-family: genericons; }
+  #hamburger-menu-container #hamburger-menu > ul, #hamburger-menu-container #hamburger-menu > ul > li, #hamburger-menu-container #hamburger-menu > div > ul, #hamburger-menu-container #hamburger-menu > div > ul > li {
+    margin: 0 !important; }
+  #hamburger-menu-container #hamburger-menu ul {
+    padding: 0 !important; }
+  #hamburger-menu-container #hamburger-menu ul ul {
+    margin: 0; }
+  #hamburger-menu-container #hamburger-menu li li a {
+    padding-left: 60px; }
+  #hamburger-menu-container #hamburger-menu li li li a {
+    padding-left: 90px; }
+  #hamburger-menu-container #hamburger-menu li li li li a {
+    padding-left: 120px; }
+  #hamburger-menu-container .hamburger-widget-container > * {
+    box-sizing: border-box; }
+    #hamburger-menu-container .hamburger-widget-container > * > *:first-child {
+      margin-top: 0 !important; }
+    #hamburger-menu-container .hamburger-widget-container > * > *:last-child {
+      margin-bottom: 0 !important; }
+  #hamburger-menu-container .hamburger-widget-container ul {
+    list-style: none !important;
+    border: 0; }
+    #hamburger-menu-container .hamburger-widget-container ul li {
+      list-style: none !important;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: 0; }
+  #hamburger-menu-container .hamburger-widget-container td, #hamburger-menu-container .hamburger-widget-container th, #hamburger-menu-container .hamburger-widget-container tr, #hamburger-menu-container .hamburger-widget-container tbody {
+    background: transparent; }
+  #hamburger-menu-container #hamburger-menu-wrapper > * {
+    width: 350px;
+    padding: 15px 0; }
+    #hamburger-menu-container #hamburger-menu-wrapper > *:first-child {
+      padding-top: 30px; }
+    #hamburger-menu-container #hamburger-menu-wrapper > *:last-child {
+      padding-bottom: 30px; }
+  #hamburger-menu-container #hamburger-menu {
+    padding-bottom: 30px; }
+  #hamburger-menu-container #hamburger-logo-container a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    border: none; }
+  #hamburger-menu-container #hamburger-logo-container img {
+    margin-left: 50%;
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100% !important; }
+  #hamburger-menu-container #hamburger-social-container {
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center; }
+  #hamburger-menu-container .hamburger-widget-container > * {
+    margin: 0 !important;
+    padding: 15px 30px 30px; }
+    #hamburger-menu-container .hamburger-widget-container > *:first-child {
+      padding-top: 0; }
+    #hamburger-menu-container .hamburger-widget-container > *:last-child {
+      padding-bottom: 30px; }
+  #hamburger-menu-container .hamburger-widget-container input, #hamburger-menu-container .hamburger-widget-container textarea, #hamburger-menu-container .hamburger-widget-container iframe, #hamburger-menu-container .hamburger-widget-container embed {
+    max-width: 100%; }
+  #hamburger-menu-container .hamburger-widget-container img {
+    max-width: 100%;
+    height: auto; }
+  #hamburger-menu-container .hamburger-menu {
+    padding-left: 0; }
+    #hamburger-menu-container .hamburger-menu li {
+      border-top: 1px solid #2C3E50;
+      color: #D2527F; }
+      #hamburger-menu-container .hamburger-menu li:last-child {
+        border-bottom: 1px solid #2C3E50; }
+  #hamburger-menu-container .widget {
+    background: transparent !important; }
+
+.hamburger-right #hamburger-menu-container {
+  left: auto;
+  right: 0; }
+
+/**
+ * Menu input fields
+ */
+#hamburger-menu-container input, #hamburger-menu-container textarea {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #444;
+  border-radius: 4px;
+  padding: .5em .8em; }
+#hamburger-menu-container.dark input, #hamburger-menu-container.dark textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ccc; }
+
+/**
+ * Buttons
+ */
+#hamburger-menu-container button, #hamburger-menu-container input[type="button"], #hamburger-menu-container input[type="submit"], #hamburger-menu-container input[type="reset"] {
+  background: #34495E;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: .5em .8em;
+  line-height: inherit;
+  display: inline-block;
+  text-transform: none;
+  text-decoration: none;
+  font-style: none;
+  opacity: 1;
+  -moz-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out; }
+  #hamburger-menu-container button:hover, #hamburger-menu-container input[type="button"]:hover, #hamburger-menu-container input[type="submit"]:hover, #hamburger-menu-container input[type="reset"]:hover {
+    opacity: 1;
+    text-transform: none;
+    text-decoration: none;
+    font-style: none; }
+#hamburger-menu-container [role="search"] input[type="submit"] {
+  display: none; }
+
+/**
+ * Submenus
+ */
+#hamburger-menu-container #hamburger-menu li {
+  overflow: hidden; }
+  #hamburger-menu-container #hamburger-menu li > ul {
+    position: absolute;
+    z-index: -999;
+    -moz-transition: height 0.6s ease-in-out;
+    -o-transition: height 0.6s ease-in-out;
+    -webkit-transition: height 0.6s ease-in-out;
+    transition: height 0.6s ease-in-out; }
+  #hamburger-menu-container #hamburger-menu li ul > li:last-child {
+    border-bottom: 0; }
+
+#hamburger-menu-container {
+  -moz-transition: -moz-transform 0.6s ease-in-out;
+  -o-transition: -o-transform 0.6s ease-in-out;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  -moz-transform: translateX(-350px);
+  -ms-transform: translateX(-350px);
+  -webkit-transform: translateX(-350px);
+  transform: translateX(-350px); }
+  #hamburger-menu-container.open {
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+
+#hamburger-button {
+  -moz-transition: -moz-transform 0.6s ease-in-out;
+  -o-transition: -o-transform 0.6s ease-in-out;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out; }
+  #hamburger-button.close {
+    -moz-transform: translateX(350px);
+    -ms-transform: translateX(350px);
+    -webkit-transform: translateX(350px);
+    transform: translateX(350px); }
+
+#hamburger-content-wrapper {
+  -moz-transition: -moz-transform 0.6s ease-in-out;
+  -o-transition: -o-transform 0.6s ease-in-out;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0); }
+
+html.hamburger_open body:before, html.hamburger_open body:after, html.hamburger_open #hamburger-content-wrapper {
+  -moz-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  -webkit-transform: translateX(100px);
+  transform: translateX(100px); }
+
+html.slide-fixed.hamburger_open body:before, html.slide-fixed.hamburger_open body:after, html.slide-fixed.hamburger_open #hamburger-content-wrapper {
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none; }
+html.slide-fixed #hamburger-content-wrapper {
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none; }
+
+html.slide-move-whole.hamburger_open body:before, html.slide-move-whole.hamburger_open body:after, html.slide-move-whole.hamburger_open #hamburger-content-wrapper {
+  -moz-transform: translateX(350px);
+  -ms-transform: translateX(350px);
+  -webkit-transform: translateX(350px);
+  transform: translateX(350px); }
+
+/**
+ * Right side menu
+ */
+html.hamburger-right #hamburger-menu-container {
+  -moz-transform: translateX(350px);
+  -ms-transform: translateX(350px);
+  -webkit-transform: translateX(350px);
+  transform: translateX(350px); }
+  html.hamburger-right #hamburger-menu-container.open {
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+html.hamburger-right #hamburger-button.close {
+  -moz-transform: translateX(-350px);
+  -ms-transform: translateX(-350px);
+  -webkit-transform: translateX(-350px);
+  transform: translateX(-350px); }
+html.hamburger-right.hamburger_open body:before, html.hamburger-right.hamburger_open body:after, html.hamburger-right.hamburger_open #hamburger-content-wrapper {
+  -moz-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  -webkit-transform: translateX(-100px);
+  transform: translateX(-100px); }
+html.hamburger-right.slide-fixed.hamburger_open body:before, html.hamburger-right.slide-fixed.hamburger_open body:after, html.hamburger-right.slide-fixed.hamburger_open #hamburger-content-wrapper {
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none; }
+html.hamburger-right.slide-move-whole.hamburger_open body:before, html.hamburger-right.slide-move-whole.hamburger_open body:after, html.hamburger-right.slide-move-whole.hamburger_open #hamburger-content-wrapper {
+  -moz-transform: translateX(-350px);
+  -ms-transform: translateX(-350px);
+  -webkit-transform: translateX(-350px);
+  transform: translateX(-350px); }
+
+/**
+ * Animation required styles
+ */
+html.hamburger_open {
+  overflow-x: hidden; }
+
+body:before, body:after {
+  -moz-transition: -moz-transform 0.6s ease-in-out;
+  -o-transition: -o-transform 0.6s ease-in-out;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out; }
+
+/**
+ * Compatibility. Since some themes use POSITION FIXED, and that doesn't play well with transforms, we provide
+ * a compatibility mode. Laggy animations (since it's not GPU accelerated), but they work.
+ */
+html.hamburger-compat {
+  /**
+   * Animation required styles
+   */ }
+  html.hamburger-compat #hamburger-menu-container {
+    -moz-transition: left 0.6s ease-in-out;
+    -o-transition: left 0.6s ease-in-out;
+    -webkit-transition: left 0.6s ease-in-out;
+    transition: left 0.6s ease-in-out;
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: -350px; }
+    html.hamburger-compat #hamburger-menu-container.open {
+      -moz-transform: none;
+      -ms-transform: none;
+      -webkit-transform: none;
+      transform: none;
+      left: 0; }
+  html.hamburger-compat #hamburger-content-wrapper {
+    -moz-transition: left 0.6s ease-in-out;
+    -o-transition: left 0.6s ease-in-out;
+    -webkit-transition: left 0.6s ease-in-out;
+    transition: left 0.6s ease-in-out;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    position: relative;
+    left: 0; }
+  html.hamburger-compat.hamburger_open body:before, html.hamburger-compat.hamburger_open body:after, html.hamburger-compat.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 100px; }
+  html.hamburger-compat.slide-fixed.hamburger_open body:before, html.hamburger-compat.slide-fixed.hamburger_open body:after, html.hamburger-compat.slide-fixed.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 0; }
+  html.hamburger-compat.slide-move-whole.hamburger_open body:before, html.hamburger-compat.slide-move-whole.hamburger_open body:after, html.hamburger-compat.slide-move-whole.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 350px; }
+  html.hamburger-compat.hamburger-right #hamburger-menu-container {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 350px; }
+    html.hamburger-compat.hamburger-right #hamburger-menu-container.open {
+      -moz-transform: none;
+      -ms-transform: none;
+      -webkit-transform: none;
+      transform: none;
+      left: 0; }
+  html.hamburger-compat.hamburger-right.hamburger_open body:before, html.hamburger-compat.hamburger-right.hamburger_open body:after, html.hamburger-compat.hamburger-right.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: -100px; }
+  html.hamburger-compat.hamburger-right.slide-fixed.hamburger_open body:before, html.hamburger-compat.hamburger-right.slide-fixed.hamburger_open body:after, html.hamburger-compat.hamburger-right.slide-fixed.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 0; }
+  html.hamburger-compat.hamburger-right.slide-move-whole.hamburger_open body:before, html.hamburger-compat.hamburger-right.slide-move-whole.hamburger_open body:after, html.hamburger-compat.hamburger-right.slide-move-whole.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: -350px; }
+  html.hamburger-compat body:before, html.hamburger-compat body:after {
+    -moz-transition: left 0.6s ease-in-out;
+    -o-transition: left 0.6s ease-in-out;
+    -webkit-transition: left 0.6s ease-in-out;
+    transition: left 0.6s ease-in-out; }
+
+/**
+ * Fixed menu required styles
+ */
+html.hamburger_fixed #hamburger-menu-container {
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none;
+  left: 0; }
+html.hamburger_fixed #hamburger-button {
+  display: none !important; }
+
+html.hamburger-left.hamburger_fixed #hamburger-content-wrapper {
+  margin-left: 350px; }
+
+html.hamburger-right.hamburger_fixed #hamburger-menu-container {
+  left: auto; }
+html.hamburger-right.hamburger_fixed #hamburger-content-wrapper {
+  margin-right: 350px; }
+
+/**
+ * Menu highlights
+ */
+#hamburger-menu-container a, #hamburger-menu-container a:link, #hamburger-menu-container a:visited {
+  -moz-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out; }
+
+#hamburger-menu-container #hamburger-menu li a, #hamburger-menu-container #hamburger-menu li a:visited, #hamburger-menu-container #hamburger-menu li a:link {
+  z-index: 1;
+  position: relative; }
+  #hamburger-menu-container #hamburger-menu li a:before, #hamburger-menu-container #hamburger-menu li a:visited:before, #hamburger-menu-container #hamburger-menu li a:link:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2f2f2f;
+    display: block;
+    z-index: -1;
+    -moz-transition: -moz-transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    -o-transition: -o-transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    -webkit-transition: -webkit-transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 0; }
+
+/**
+ * Highlight animations
+ */
+#hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:before, #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:link:before, #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:visited:before {
+  opacity: 0; }
+#hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:hover:before, #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:link:hover:before, #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:visited:hover:before {
+  opacity: 1; }
+
+#hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:before, #hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:link:before, #hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:visited:before {
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  opacity: 1; }
+#hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:hover:before, #hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:link:hover:before, #hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:visited:hover:before {
+  -moz-transform: translateX(calc(-100% + 10px));
+  -ms-transform: translateX(calc(-100% + 10px));
+  -webkit-transform: translateX(calc(-100% + 10px));
+  transform: translateX(calc(-100% + 10px));
+  opacity: 1; }
+
+#hamburger-menu-container.highlight-grow #hamburger-menu li a:hover, #hamburger-menu-container.highlight-grow #hamburger-menu li a:link:hover, #hamburger-menu-container.highlight-grow #hamburger-menu li a:visited:hover {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+#hamburger-overlay {
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 99998;
+  left: 0;
+  top: 0;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  opacity: 0;
+  background: #000;
+  cursor: pointer; }
+
+.hamburger_open #hamburger-overlay {
+  width: auto;
+  height: auto;
+  top: -100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1; }
+
+/**
+ * Make sure our overlay covers the entire body
+ */
+#hamburger-content-wrapper {
+  position: relative; }
+  #hamburger-content-wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+    position: relative;
+    height: 1px;
+    background: transparent; }
+
+body.admin-bar {
+  margin-top: -32px; }
+
+body.admin-bar .hamburger-button-container {
+  margin-top: 32px; }
+
+/**
+ * When in the customizer, when the menu is open, when reloading stop the animations so 
+ * we can preview changes fast
+ */
+html.hamburger-stop-animation #hamburger-menu-container, html.hamburger-stop-animation #hamburger-button, html.hamburger-stop-animation #hamburger-content-wrapper {
+  -moz-transition: -moz-transform 0s ease-in-out;
+  -o-transition: -o-transform 0s ease-in-out;
+  -webkit-transition: -webkit-transform 0s ease-in-out;
+  transition: transform 0s ease-in-out; }
+
+/**
+ * Only apply these fixes if the current theme is twenty-fifteen
+ */
+html.hamburger-twenty-fifteen.hamburger-left.hamburger_fixed body.hamburger-twenty-fifteen:before {
+  margin-left: 350px; }
+
+@media screen and (min-width: 87.6875em) {
+  html.hamburger-twenty-fifteen.hamburger_fixed body.hamburger-twenty-fifteen:before {
+    width: -webkit-calc(45% - 350px);
+    width: calc(45% - 350px); } }
+@media screen and (min-width: 59.6875em) {
+  html.hamburger-twenty-fifteen.hamburger_fixed body.hamburger-twenty-fifteen:before {
+    width: 21%; } }
+/**
+ * Only apply these fixes if the current theme is twenty-fourteen
+ */
+html.hamburger-twenty-fourteen {
+  margin-top: 0 !important; }

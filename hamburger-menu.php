@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: Hamburger Menu by Gambit
+* Plugin Name: Responsive Hamburger Menu
 * Plugin URI: https://github.com/gambitph/Hamburger-Menu
 * Description: A mobile hamburger menu that displays a cool side menu. This can serve as a replacement menu for your theme.
 * Version: 1.0
